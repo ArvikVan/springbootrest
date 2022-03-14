@@ -26,8 +26,8 @@ public class MyRestController {
         return allEmployees;
     }
 
-/*    @GetMapping("/employees/{id}")
-    public Employee getEmployee(@PathVariable int id) { *//*для получения переменной из запроса*//*
+    @GetMapping("/employees/{id}")
+    public Employee getEmployee(@PathVariable int id) { /*для получения переменной из запроса*/
         Employee employee = employeeService.getEmployee(id);
         if (employee == null) {
             throw new NoEmployeeException("No employee with id " + id + " in DB");
@@ -35,38 +35,38 @@ public class MyRestController {
         return employee;
     }
 
-    *//**
+   /* *
      * прокидываем жсон в теле запроса с помощью постмаппинга
      * @param employee емплои который надо добавить
      * @return на выходе добавленый емплои
      * PostMapping связывает хттп запрос с методом контроллера
-     * RequestBody связывает тело метода с параметром метода контроллера
-     *//*
+     * RequestBody связывает тело метода с параметром метода контроллера*/
+
     @PostMapping("/employees")
     public Employee addEmployee(@RequestBody Employee employee) {
         employeeService.saveEmployee(employee);
         return employee;
     }
 
-    *//**
+   /* *
      * получаем жаваобъект который жсонов в ответе приходит
      * @param employee что на входе
      * @return на выходе жава объект
      * PutMapping связывает запрос с методом контроллера
-     * Емплои помтоу что возвращаем емплои
-     *//*
+     * Емплои помтоу что возвращаем емплои*/
+
     @PutMapping("/employees")
     public Employee updateEmployee(@RequestBody Employee employee) {
         employeeService.saveEmployee(employee);
         return employee;
     }
 
-    *//**
+    /**
      * удаляем емплои
      * @param id ид по которому удалять будем
      * @return на выходе текст об удалении
      * String потому что возвращаем текст
-     *//*
+     */
     @DeleteMapping("/employees/{id}")
     public String deleteEmloyee(@PathVariable int id) {
         Employee employee = employeeService.getEmployee(id);
@@ -75,5 +75,5 @@ public class MyRestController {
         }
         employeeService.deleteEmployee(id);
         return  "Employee with id " + id + " delete.";
-    }*/
+    }
 }

@@ -24,24 +24,24 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeDAO.getAllEmployees();
     }
 
-/*    @Override
-    @Transactional*//*открываем закрываем сессию*//*
+    @Override
+    @Transactional/*открываем закрываем сессию*/
     public void saveEmployee(Employee employee) {
         employeeDAO.saveEmployee(employee);
     }
 
     @Override
-    @Transactional*//*открываем закрываем сессию*//*
+    @Transactional/*открываем закрываем сессию*/
     public Employee getEmployee(int id) {
         return employeeDAO.getEmployee(id);
     }
 
     @Override
-    @Transactional*//*открываем закрываем сессию*//*
+    @Transactional/*открываем закрываем сессию*/
     public void deleteEmployee(int id) {
         employeeDAO.deleteEmployee(id);
 
-    }*/
+    }
 
 
 }
